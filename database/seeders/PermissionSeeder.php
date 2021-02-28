@@ -80,7 +80,7 @@ class PermissionSeeder extends Seeder
         Permission::updateOrCreate([
             'module_id' => $moduleAppBackups->id,
             'name' => 'Download Backups',
-            'slug' => 'app.backups.edit'
+            'slug' => 'app.backups.download'
         ]);
         Permission::updateOrCreate([
             'module_id' => $moduleAppBackups->id,
