@@ -33,7 +33,7 @@
                     <tr>
                         <th class="text-center">#</th>
                         <th class="text-center">Name</th>
-                        <th class="text-center">City</th>
+                        <th class="text-center">Permission</th>
                         <th class="text-center">Updated at</th>
                         <th class="text-center">Actions</th>
                     </tr>

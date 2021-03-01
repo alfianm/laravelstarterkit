@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\BackupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\RoleController;
@@ -29,3 +30,10 @@ Route::post('profile', [ProfileController::class,'update'])->name('profile.updat
 
 // Backups
 Route::resource('backups', BackupController::class)->only(['index','store','destroy']);
+Route::resource('roles', RoleController::class);
+Route::resource('users', UserController::class);
+
+// Backups
+Route::resource('backups', BackupController::class)->only('index','store','destroy');
+Route::get('backups/{file_name}',[BackupController::class,'download'])->name('backups.download');
+Route::delete('backups/clean',[BackupController::class,'clean'])->name('backups.clean');

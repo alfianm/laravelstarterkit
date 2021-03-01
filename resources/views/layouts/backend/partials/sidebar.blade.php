@@ -53,6 +53,13 @@
                         Users 
                     </a>
                 </li>
+
+                <li>
+                    <a href="{{route('app.backups.index')}}" class="{{Request::is('app/backups*') ? 'mm-active' : ''}}">
+                        <i class="metismenu-icon pe-7s-cloud"></i>
+                        Users 
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
