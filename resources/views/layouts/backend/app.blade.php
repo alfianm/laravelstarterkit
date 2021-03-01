@@ -23,7 +23,7 @@
     <div id="app" class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         @include('layouts.backend.partials.header')
         <div class="app-main">
-            @include('layouts.backend.partials.sidebar') 
+            @include('layouts.backend.partials.sidebar')
 
             <div class="app-main__outer">
                 <div class="app-main__inner">
