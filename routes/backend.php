@@ -3,9 +3,9 @@
 use App\Http\Controllers\Backend\BackupController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\PageController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\UserController;
-use App\Http\Controllers\Backend\BackupController;
 use App\Http\Controllers\Backend\ProfileController;
 
 /*
@@ -28,10 +28,12 @@ Route::resource('users', UserController::class);
 Route::get('profile', [ProfileController::class,'index'])->name('profile.index');
 Route::post('profile', [ProfileController::class,'update'])->name('profile.update');
 
-// Backups
-Route::resource('backups', BackupController::class)->only(['index','store','destroy']);
-Route::resource('roles', RoleController::class);
-Route::resource('users', UserController::class);
+// Security
+Route::get('profile/security', [ProfileController::class, 'changePassword'])->name('profile.password.change');
+Route::post('profile/security', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
+
+// Pages
+Route::resource('pages', PageController::class)->except(['show']);
 
 // Backups
 Route::resource('backups', BackupController::class)->only('index','store','destroy');

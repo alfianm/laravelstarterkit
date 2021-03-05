@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -35,11 +36,11 @@ class ProfileController extends Controller
 
     public function changePassword()
     {
-        Gate::authorize('app.profile.password');
+        // Gate::authorize('app.profile.password');
         return view('backend.profile.security');
     }
 
-    public function updatePassword(UpdatePasswordRequest $request)
+    public function updatePassword(Request $request)
     {
         $hashedPassword = Auth::user()->password;
         if (Hash::check($request->current_password, $hashedPassword)) {
